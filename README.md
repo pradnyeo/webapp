@@ -1,5 +1,5 @@
 This is a sample Web Application to use during Continuous Integration demos.
-Pradnyesh otari
+
 
 #Build Instruction
 

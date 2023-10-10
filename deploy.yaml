@@ -2,6 +2,23 @@
 - hosts: dev
   become: true
   tasks:
+    - name: Install python pip
+      yum:
+        name: python-pip
+        state: present
+    - name: Install docker
+      yum:
+        name: docker
+        state: present
+    - name: start docker
+      service:
+        name: docker
+        state: started
+        enabled: yes
+    - name: Install docker-py python module
+      pip:
+        name: docker-py
+        state: present
     - name: Deploy container on server
       docker_container:
         name: pradnyeo/webapp:{{DOCKER_TAG}}

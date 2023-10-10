@@ -21,7 +21,8 @@
         state: present
     - name: Deploy container on server
       docker_container:
-        name: pradnyeo/webapp:{{DOCKER_TAG}}
+        name: WebApp
+        image: pradnyeo/webapp:{{DOCKER_TAG}}
         state: started
         published_ports:
           - 0.0.0.0:8085:8080

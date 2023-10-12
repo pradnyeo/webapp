@@ -31,7 +31,7 @@ pipeline {
                 type: 'war']], 
                 credentialsId: 'Nexus', 
                 groupId: 'lu.amazon.aws.demo', 
-                nexusUrl: '52.66.246.139:8081/', 
+                nexusUrl: '13.232.219.19/8081/', 
                 nexusVersion: 'nexus3', 
                 protocol: 'http', 
                 repository: 'maven-snapshots', 
@@ -41,7 +41,7 @@ pipeline {
         stage ('DeployWarFileToApache') {
             steps {
                 deploy adapters: 
-                [tomcat9(credentialsId: '6635eb1a-9c54-4f63-a97e-5b9bb2043d5d', path: '', url: 'http://13.233.195.32:8084/')], 
+                [tomcat9(credentialsId: '6635eb1a-9c54-4f63-a97e-5b9bb2043d5d', path: '', url: 'http://65.2.141.49:8084/')], 
                 contextPath: null, war: '**/*.war'
             }
         }
@@ -81,7 +81,17 @@ pipeline {
                 playbook: 'deploy.yaml'
             }
         }
-        
+       
+        // get notification after dev env deployment
+
+        stage('Dev env notification') {
+		steps {
+			 slackSend channel: '#devops-practice', 
+                	color: 'Good', message: 'Deploy Successfully on Dev Env', 
+                	teamDomain: 'devops-wud2490', 
+                	tokenCredentialId: 'Slack-notif'        
+		}
+        }        
     }
 }
 

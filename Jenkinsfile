@@ -24,20 +24,24 @@ pipeline {
         }
         stage ('NexusUploader') {
             steps {
+ 
                 nexusArtifactUploader artifacts: 
-                [[artifactId: 'WebApp', 
-                classifier: '', 
-                file: '/var/lib/jenkins/workspace/first-project/target/WebApp.war', 
-                type: 'war']], 
-                credentialsId: 'Nexus', 
-                groupId: 'lu.amazon.aws.demo', 
-                nexusUrl: '13.232.219.19/8081/', 
-                nexusVersion: 'nexus3', 
-                protocol: 'http', 
-                repository: 'maven-snapshots', 
-                version: '1.0-SNAPSHOT'
-            }
+		[[artifactId: 'WebApp', 
+		classifier: '', 	
+		file: '/var/lib/jenkins/workspace/first-project/target/WebApp.war', 	
+		type: 'war']], 	
+		credentialsId: 'Nexus', 
+		groupId: 'lu.amazon.aws.demo', 
+		nexusUrl: '13.232.219.19:8081/', 
+		nexusVersion: 'nexus2', 
+		protocol: 'http', 
+		repository: 'maven-snapshots', 
+		version: '1.0-SNAPSHOT'
+		
+                 
+              }          
         }
+        
         stage ('DeployWarFileToApache') {
             steps {
                 deploy adapters: 

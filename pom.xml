@@ -22,7 +22,7 @@
     
     <distributionManagement>
         <repository>
-            <id>maven-releases</id>
+            <id>maven-releases-1.0</id>
             <name>maven-releases-1.0</name>
             <url>http://13.233.212.226:8081/repository/maven-releases/</url>
         </repository>
@@ -35,12 +35,12 @@
     
     <repositories>
         <repository>
-            <id>maven-releases</id>
+            <id>maven-releases-1.0</id>
             <name>maven-releases</name>
             <url>http://13.233.212.226:8081/repository/maven-releases/</url>
         </repository>
         <repository>
-            <id>maven-snapshots</id>
+            <id>maven-snapshots-1.0</id>
             <name>maven-snapshots</name>
             <url>http://13.233.212.226:8081/repository/maven-snapshots/</url>
         </repository>

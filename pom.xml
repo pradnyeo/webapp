@@ -23,12 +23,10 @@
     <distributionManagement>
         <repository>
             <id>maven-releases</id>
-            <!-- CHANGE HERE by your team Nexus server -->
             <url>http://13.233.212.226:8081/repository/maven-releases/</url>
         </repository>
         <snapshotRepository>
             <id>maven-snapshots</id>
-            <!-- CHANGE HERE by your team Nexus server -->
             <url>http://13.233.212.226:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
@@ -39,8 +37,6 @@
             <name>maven-releases</name>
             <url>http://13.233.212.226:8081/repository/maven-releases/</url>
         </repository>
-    </repositories>
-    <repositories>
         <repository>
             <id>maven-snapshots</id>
             <name>maven-snapshots</name>

@@ -22,11 +22,11 @@
     
     <distributionManagement>
         <repository>
-            <id>maven-releases</id>
+            <id>maven-releases-1.0</id>
             <url>http://13.233.212.226:8081/repository/maven-releases/</url>
         </repository>
         <snapshotRepository>
-            <id>maven-snapshots</id>
+            <id>maven-snapshots-1.0</id>
             <url>http://13.233.212.226:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
